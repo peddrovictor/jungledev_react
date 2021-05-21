@@ -1,0 +1,763 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/queries';
+@import '../../assets/scss/standard-project';
+
+.wrapper {
+    width: 100%;
+    height: auto;
+
+    font-family: 'Inter Light', sans-serif;
+    box-sizing: border-box;
+    color: #3D3D3D;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../assets/images/bg-header-top.png'), linear-gradient(314.72deg, #C86DD7 -1.5%, #7E49C3 39.43%, #5912AC 86.02%);
+
+    @include device(sm){
+        background-image: url('../../assets/images/bg-header-top-sm.png'), linear-gradient(314.72deg, #C86DD7 -1.5%, #7E49C3 39.43%, #5912AC 86.02%);
+    }
+
+    @include device(xs){
+        background-image: url('../../assets/images/bg-header-top-sm.png'), linear-gradient(314.72deg, #C86DD7 -1.5%, #7E49C3 39.43%, #5912AC 86.02%);
+    }
+
+    .main-overlay {
+
+        // * {
+        //     border: 1px solid red;
+        // }
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(314.72deg, rgba(#C86DD7, 0.8) -1.5%, rgba(#7E49C3,  0.8) 39.43%, rgba(#5912AC, 0.8) 86.02%);
+    }
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    font-family: 'Inter Medium';
+}
+
+.text-content {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    * {
+        margin: 10px 0;
+
+        @include device(sm){
+            margin: 20px 0;
+        }
+    
+        @include device(xs){
+            margin: 20px 0;
+        }
+    }
+
+    @include device(sm){
+        max-width: 95%;
+        align-items: center;
+    }
+
+    @include device(xs){
+        max-width: 95%;
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: 42px;
+        max-width: 20ch;
+
+        @include device(sm){
+            font-size: 32px;
+            max-width: 15ch;
+            margin-top: 100px;
+            text-align: center;
+        }
+    
+        @include device(xs){
+            font-size: 32px;
+            max-width: 15ch;
+            margin-top: 100px;
+            text-align: center;
+        }
+    }
+
+    .main-subtitle {
+        font-size: 18px;
+
+        @include device(sm){
+            margin: 20px 0 0 5px;
+            text-align: center;
+        }
+    
+        @include device(xs){
+            margin: 20px 0 0 5px;
+            text-align: center;
+        }
+    }
+}
+
+.see-hapu {
+    display: flex;
+    align-items: center;
+
+    .play-button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+    }
+
+    p {
+        cursor: pointer;
+        margin-left: 10px;
+        text-decoration: underline;
+    }
+}
+
+.cta-top {
+    width: 23%;
+    min-width: 255px;
+    height: auto;
+
+    @include device(sm){
+        display: none;
+    }
+
+    @include device(xs){
+        display: none;
+    }
+}
+
+.main-cta {
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    color: #3D3D3D;
+
+    h4, p {
+        max-width: 90%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 12px 0;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .profile-main-example {
+        display: flex;
+        margin-top: -40px;
+        margin-bottom: 30px;
+        align-items: center;
+
+        .pf {
+            width: 56px;
+            height: 56px;
+            border: 4px solid #fff;
+            border-radius: 100%;
+            display: block;
+        }
+
+        p {
+            width: 100%;
+            display: block;
+            color: #3D3D3D;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .smile-icon {
+            width: 38px;
+            height: 38px;
+            display: block;
+            margin: 0 10px;
+            border: 4px solid #fff;
+            border-radius: 100%;
+            background-color: $green;
+
+            @include img($url: '../../assets/images/smile.png', $size: 60%);
+        }
+    }
+}
+
+// notice-warning
+
+.notice-content {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    &::after  {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba($color: #3D3D3D, $alpha: 0.2);
+    }
+}
+
+.notice-warning {
+    width: 100%;
+    padding: 25px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include device(sm){
+        flex-direction: column;
+    }
+
+    @include device(xs){
+        flex-direction: column;
+    }
+
+    .profile-circle {
+        width: 56px;
+        height: 56px;
+        margin-right: 30px;
+        border-radius: 100%;
+        border: 1px solid rgba($color: #3D3D3D, $alpha: 0.2);
+
+        @include device(sm){
+            margin-right: 0;
+        }
+    
+        @include device(xs){
+            margin-right: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #fff;
+        border-radius: 100%;
+    }
+
+    p, span {
+        font-weight: bold;
+    }
+
+    p {
+        @include device(md){
+            max-width: 30ch;
+        }
+
+        @include device(sm){
+            max-width: 25ch;
+            display: block;
+            text-align: center;
+
+            span {
+                display: block;
+                margin: 12px 0;
+            }
+        }
+    
+        @include device(xs){
+            max-width: 25ch;
+            display: block;
+            text-align: center;
+
+            span {
+                display: block;
+                margin: 12px 0;
+            }
+        }
+    }
+}
+
+// product section
+
+.product {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+    @include device(sm){
+        width: 95%;
+        flex-direction: column-reverse;
+    }
+
+    @include device(xs){
+        width: 95%;
+        flex-direction: column-reverse;
+    }
+
+    .about-product {
+        width: 40%;
+        display: flex;
+        height: 300px;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        font-family: 'Inter Medium', sans-serif;
+
+        @include device(md){
+            height: 350px;
+        }
+
+        @include device(sm){
+            width: 100%;
+            height: 350px;
+            align-items: center;
+        }
+    
+        @include device(xs){
+            width: 100%;
+            height: 350px;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        p {
+            font-weight: 600;
+
+            @include device(sm){
+                max-width: 95%;
+                text-align: center;
+            }
+        
+            @include device(xs){
+                max-width: 95%;
+                text-align: center;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        a {
+            font-weight: bold;
+        }
+    }
+
+    .image-product-price {
+        width: 50%;
+
+        @include device(sm){
+            width: 100%;
+        }
+    
+        @include device(xs){
+            width: 100%;
+        }
+    }
+}
+
+// newsletter section
+
+.hr-style {
+    max-width: 70%;
+    margin: 40px auto;
+    border-top: 1px solid rgba($color: #3D3D3D, $alpha: 0.2);
+
+    @include device(sm){
+        max-width: 90%;
+    }
+
+    @include device(xs){
+        max-width: 90%;
+    }
+}
+
+.newsletter {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include device(sm){
+        width: 95%;
+    }
+
+    @include device(xs){
+        width: 95%;
+    }
+
+    h2 {
+        margin: 15px 0;
+        font-size: 22px;
+        font-family: 'Inter Medium', sans-serif;
+
+        @include device(sm){
+            text-align: center;
+        }
+
+        @include device(xs){
+            text-align: center;
+        }
+    }
+
+    p {
+        font-weight: 600;
+        margin: 15px 0;
+
+        @include device(sm){
+            text-align: center;
+        }
+
+        @include device(xs){
+            text-align: center;
+        }
+    }
+}
+
+.from-newsletter {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+
+    @include device(sm){
+        width: 100%;
+        height: 140px;
+        justify-content: space-between;
+        flex-direction: column;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    @include device(xs){
+        width: 100%;
+        height: 140px;
+        justify-content: space-between;
+        flex-direction: column;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    input {
+        border-radius: 4px;
+        padding: 10px 14px;
+        border: 1px solid rgba($color: #3D3D3D, $alpha: 0.2);
+        outline: none;
+    }
+
+    input:nth-child(2){
+        margin: 0 15px;
+    }
+
+    input[type=submit]{
+        padding: 10px 18px;
+    }
+}
+
+// shared payments section
+
+.shared-payments {
+    width: 80%;
+    margin: 60px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include device(md){
+        width: 85%;
+    }
+
+    @include device(sm){
+        width: 95%;
+        flex-direction: column;
+    }
+
+    @include device(xs){
+        width: 95%;
+        flex-direction: column;
+    }
+
+    img {
+        width: 45%;
+        margin-right: 80px;
+
+        @include device(sm){
+            margin-right: 0;
+            width: 100%;
+        }
+    
+        @include device(xs){
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+}
+
+.shared-text {
+    width: 53%;
+
+    @include device(sm){
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @include device(xs){
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        font-family: 'Inter Medium', sans-serif;
+
+        @include device(sm){
+            text-align: center;
+            max-width: 15ch;
+        }
+    
+        @include device(xs){
+            text-align: center;
+            max-width: 15ch;
+        }
+    }
+
+    p {
+        font-weight: bold;
+        margin-bottom: 30px;
+
+        @include device(sm){
+            text-align: center;
+        }
+    
+        @include device(xs){
+            text-align: center;
+        }
+    }
+
+    a {
+        font-weight: bold;
+
+        @include device(sm){
+            text-align: center;
+        }
+    
+        @include device(xs){
+            text-align: center;
+        }
+    }
+}
+
+// about framework section
+
+.about-framework {
+    width: 50%;
+    height: 250px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include device(md){
+        width: 70%;
+        margin: 50px auto;
+    }
+
+    @include device(sm){
+        width: 95%;
+        margin: 40px auto;
+        height: 330px;
+    }
+
+    @include device(xs){
+        width: 95%;
+        margin: 40px auto;
+        height: 330px;
+    }
+
+    h2 {
+        font-family: 'Inter Medium', sans-serif;
+        font-size: 28px;
+    }
+
+    p, a {
+        font-weight: 600;
+    }
+}
+
+.billing-example {
+    max-width: 60%;
+    margin: 60px auto;
+
+    @include device(md){
+        max-width: 75%;
+    }
+
+    @include device(sm){
+        display: none;
+    }
+
+    @include device(xs){
+        display: none;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+#hr-billing {
+    @include device(sm){
+        display: none;
+    }
+
+    @include device(xs){
+        display: none;
+    }
+}
+
+.soon {
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include device(sm){
+        width: 95%;
+    }
+
+    @include device(xs){
+        width: 95%;
+    }
+
+    h2, p {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 30px;
+        font-size: 28px;
+        font-family: 'Inter Medium', sans-serif;
+    }
+
+    p  {
+        font-weight: 600;
+    }
+}
+
+.become-section {
+    width: 70%;
+    margin: 30px auto;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include device(sm){
+        width: 95%;
+    }
+
+    @include device(xs){
+        width: 95%;
+    }
+
+    h2, p {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 30px;
+        font-size: 28px;
+        font-family: 'Inter Medium', sans-serif;
+
+        @include device(sm){
+            font-size: 24px;
+        }
+    
+        @include device(xs){
+            font-size: 24px;
+        }
+    }
+
+    p, a  {
+        font-weight: 600;
+    }
+
+    button {
+        @include device(lg){
+            width: 300px;
+        }
+
+        @include device(md){
+            width: 300px;
+        }
+
+        width: 90%;
+        padding: 2px 0;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        background: #5E20A4;
+        justify-content: space-evenly;
+
+        p {
+            font-size: 16px;
+            font-weight: 500    ;
+            text-align: left;
+
+            &::after {
+                display: block;
+                font-weight: 300;
+                font-size: 14px;
+                content: 'Take less than 5 minutes';
+            }
+        }
+    }
+}

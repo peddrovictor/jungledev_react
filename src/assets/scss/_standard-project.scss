@@ -1,0 +1,37 @@
+// colors
+$black: rgb(0, 0, 0);
+$purple: #5E20A4;
+$light-purple: #9451d0;
+$green: #00C88C;
+
+.marked-text {
+    color: $purple;
+    text-decoration: underline;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 10px;
+    background-color: $green;
+}
+
+.btn-purple {
+    background-color: $light-purple;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a, ul li a {
+    color: #fff;
+    font-family: 'Inter Light', sans-serif;
+    
+    &:hover {
+        color: $purple;
+    }
+}
